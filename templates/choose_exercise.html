@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Choose Exercise</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #111827;
+            color: #F9FAFB;
+            font-family: 'Segoe UI', sans-serif;
+            text-align: center;
+            padding: 60px;
+        }
+
+        h1 {
+            font-size: 36px;
+            margin-bottom: 40px;
+        }
+
+        .exercise-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .exercise-form {
+            background-color: #1F2937;
+            border-radius: 16px;
+            padding: 20px;
+            width: 220px;
+            transition: transform 0.2s;
+        }
+
+        .exercise-form:hover {
+            transform: scale(1.05);
+        }
+
+        .exercise-img {
+            width: 100%;
+            max-height: 140px;
+            object-fit: contain;
+            border-radius: 12px;
+            margin-bottom: 15px;
+        }
+
+        .exercise-btn {
+            background-color: #FF6B35;
+            border: none;
+            border-radius: 10px;
+            padding: 12px;
+            font-size: 18px;
+            font-weight: bold;
+            color: white;
+            width: 100%;
+        }
+
+        .exercise-btn:hover {
+            background-color: #e85c2b;
+        }
+    </style>
+</head>
+<body>
+<h1>Select Your Exercise</h1>
+<div class="exercise-grid">
+
+    <form action="/workout" method="get" class="exercise-form">
+        <img src="{{ url_for('static', filename='leg_raise.png') }}" class="exercise-img" alt="Leg Raise">
+        <button name="exercise" value="leg_raise" class="exercise-btn">Leg Raise</button>
+    </form>
+
+    <form action="/workout" method="get" class="exercise-form">
+        <img src="{{ url_for('static', filename='squat.png') }}" class="exercise-img" alt="Squat">
+        <button name="exercise" value="squat" class="exercise-btn">Squat</button>
+    </form>
+
+    <form action="/workout" method="get" class="exercise-form">
+        <img src="{{ url_for('static', filename='hand_raise.png') }}" class="exercise-img" alt="Hand Raise">
+        <button name="exercise" value="hand_raise" class="exercise-btn">Hand Raise</button>
+    </form>
+
+    <form action="/workout" method="get" class="exercise-form">
+        <img src="{{ url_for('static', filename='biceps_curls.png') }}" class="exercise-img" alt="Biceps Curls">
+        <button name="exercise" value="biceps_curls" class="exercise-btn">Biceps Curls</button>
+    </form>
+
+</div>
+</body>
+</html>
